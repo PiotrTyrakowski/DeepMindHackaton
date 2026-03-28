@@ -26,7 +26,7 @@ export function HighlightedText({ children }: { children: React.ReactNode }) {
   // </CHANGE>
 
   return (
-    <span ref={spanRef} className="relative inline-block">
+    <span ref={spanRef} className="relative inline-block text-accent">
       {children}
       <svg
         className="absolute -bottom-1 left-0 w-full h-4 overflow-visible"
@@ -36,7 +36,7 @@ export function HighlightedText({ children }: { children: React.ReactNode }) {
       >
         <path
           d="M0 8 Q50 2, 100 6 T200 8"
-          stroke="rgb(251 146 60)"
+          stroke="currentColor"
           strokeWidth="2"
           fill="none"
           strokeLinecap="round"

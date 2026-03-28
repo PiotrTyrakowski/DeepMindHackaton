@@ -33,7 +33,7 @@ export function Header() {
       className={cn(
         "fixed z-50 transition-all duration-500 my-0 py-0 rounded-none",
         scrolled || mobileMenuOpen
-          ? "bg-primary backdrop-blur-md py-4 top-4 left-4 right-4 rounded-2xl"
+          ? "bg-primary text-primary-foreground backdrop-blur-md py-4 top-4 left-4 right-4 rounded-2xl border border-border"
           : "bg-transparent py-4 top-0 left-0 right-0",
       )}
     >
@@ -53,7 +53,7 @@ export function Header() {
             <li key={item.label}>
               <Link
                 href={item.href}
-                className="hover:text-[rgb(251,146,60)] transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-[rgb(251,146,60)] after:transition-all after:duration-300 text-white"
+                className="hover:text-accent transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-accent after:transition-all after:duration-300 text-foreground"
               >
                 {item.label}
               </Link>
@@ -66,15 +66,15 @@ export function Header() {
           className={cn(
             "hidden md:inline-flex items-center gap-2 text-sm px-5 py-2.5 transition-all duration-300",
             scrolled
-              ? "bg-white text-foreground border border-foreground/20 hover:bg-foreground hover:text-white"
-              : "bg-white text-foreground border border-foreground/20 hover:bg-foreground hover:text-white",
+              ? "bg-accent text-accent-foreground border border-accent/20 hover:bg-accent/80"
+              : "bg-accent text-accent-foreground border border-accent/20 hover:bg-accent/80",
           )}
         >
           Free Quote
         </Link>
 
         <button
-          className="md:hidden z-50 transition-colors duration-300 text-white"
+          className="md:hidden z-50 transition-colors duration-300 text-foreground"
           aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
@@ -110,7 +110,7 @@ export function Header() {
               <li key={item.label}>
                 <Link
                   href={item.href}
-                  className="hover:text-[rgb(251,146,60)] transition-colors duration-300 text-white text-4xl font-light block"
+                  className="hover:text-accent transition-colors duration-300 text-foreground text-4xl font-light block"
                   onClick={closeMobileMenu}
                 >
                   {item.label}
@@ -121,7 +121,7 @@ export function Header() {
 
           <Link
             href="#contact"
-            className="inline-flex items-center justify-center gap-2 text-sm px-5 py-2.5 bg-white text-foreground border border-foreground/20 hover:bg-foreground hover:text-white transition-all duration-300 mb-4"
+            className="inline-flex items-center justify-center gap-2 text-sm px-5 py-2.5 bg-accent text-accent-foreground border border-accent/20 hover:bg-accent/80 transition-all duration-300 mb-4"
             onClick={closeMobileMenu}
           >
             Free Quote

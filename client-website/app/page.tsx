@@ -1,5 +1,6 @@
 "use client"
 
+import { useEffect } from "react"
 import { usePolling } from "@/lib/usePolling"
 import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
@@ -12,10 +13,17 @@ import { Footer } from "@/components/footer"
 
 export default function Home() {
   const state = usePolling(2000)
-  const themeClass = state.themeVariant === "slate" ? "theme-slate" : ""
+
+  useEffect(() => {
+    if (state.themeVariant === "slate") {
+      document.documentElement.classList.add("theme-slate")
+    } else {
+      document.documentElement.classList.remove("theme-slate")
+    }
+  }, [state.themeVariant])
 
   return (
-    <main className={`min-h-screen transition-all duration-700 ${themeClass}`}>
+    <main className="min-h-screen transition-all duration-700">
       <Header />
       <Hero />
       <Philosophy roofPhotoFixed={state.roofPhotoFixed} />
