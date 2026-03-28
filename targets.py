@@ -1,0 +1,17 @@
+TARGETS = [
+    ("plumber",      "Gallup, NM"),
+    ("electrician",  "Tooele, UT"),
+    ("auto repair",  "Hobbs, NM"),
+    ("painter",      "Clovis, NM"),
+    ("hair salon",   "Stillwater, OK"),
+    ("plumber",      "Vernal, UT"),
+    ("locksmith",    "Dodge City, KS"),
+    ("electrician",  "Alamogordo, NM"),
+    ("roofing",      "Liberal, KS"),
+    ("auto body",    "Douglas, AZ"),
+    ("plumber",      "Rawlins, WY"),
+    ("handyman",     "Altus, OK"),
+    ("electrician",  "Greenwood, MS"),
+    ("pest control", "Lufkin, TX"),
+    ("painter",      "Crowley, LA"),
+]
