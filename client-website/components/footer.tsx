@@ -49,24 +49,24 @@ export function Footer() {
             <h4 className="text-sm font-medium mb-4">Connect</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li>
-                <a href="mailto:hello@hously.com" className="hover:text-foreground transition-colors">
-                  hello@hously.com
+                <a href="mailto:info@wierzbaroofing.com" className="hover:text-foreground transition-colors">
+                  info@wierzbaroofing.com
                 </a>
               </li>
               <li>
-                <a href="tel:+1234567890" className="hover:text-foreground transition-colors">
-                  +1 (234) 567-890
+                <a href="tel:+15127834921" className="hover:text-foreground transition-colors">
+                  (512) 783-4921
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-foreground transition-colors">
-                  Instagram
-                </a>
+                <span>
+                  4817 Oak Creek Dr, Austin, TX 78735
+                </span>
               </li>
               <li>
-                <a href="#" className="hover:text-foreground transition-colors">
-                  LinkedIn
-                </a>
+                <span>
+                  Licensed & Insured · TX ROC #284751
+                </span>
               </li>
             </ul>
           </div>
@@ -74,7 +74,7 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="pt-8 border-t border-border flex flex-col md:flex-row md:items-center justify-between gap-4 text-sm text-muted-foreground">
-          <p>© 2025 Hously. All rights reserved.</p>
+          <p>© 2026 Piotr Wierzba Roofing. All rights reserved.</p>
           <div className="flex gap-6">
             <Link href="#" className="hover:text-foreground transition-colors">
               Privacy
