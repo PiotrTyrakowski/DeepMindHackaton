@@ -169,7 +169,7 @@ CTA_MAP = {
     "landscaping": "seasonal estimate form",
 }
 
-STATUSES = ["WAITING_FOR_CALL", "CALLED", "INTERESTED"]
+STATUSES = ["WAITING_FOR_CALL", "CALLED", "BOUGHT"]
 STATUS_WEIGHTS = [50, 30, 20]
 
 

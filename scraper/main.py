@@ -217,7 +217,7 @@ class StatusUpdate(BaseModel):
     status: str
 
 
-VALID_STATUSES = {"WAITING_FOR_CALL", "CALLED", "INTERESTED"}
+VALID_STATUSES = {"WAITING_FOR_CALL", "CALLED", "BOUGHT"}
 
 
 @app.patch("/leads/{lead_id}/status")
