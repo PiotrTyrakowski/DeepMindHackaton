@@ -105,12 +105,21 @@ def init_db():
         """)
         conn.commit()
 
-        # Migration: add lead pipeline status column if missing
-        try:
-            conn.execute("ALTER TABLE leads ADD COLUMN status TEXT NOT NULL DEFAULT 'NEW'")
-            conn.commit()
-        except sqlite3.OperationalError:
-            pass  # column already exists
+        # Migrations: add columns introduced after initial schema
+        migrations = [
+            "ALTER TABLE leads ADD COLUMN status TEXT NOT NULL DEFAULT 'NEW'",
+            "ALTER TABLE leads ADD COLUMN ai_summary TEXT",
+            "ALTER TABLE leads ADD COLUMN services_detected TEXT",
+            "ALTER TABLE leads ADD COLUMN confidence_city INTEGER",
+            "ALTER TABLE leads ADD COLUMN confidence_state INTEGER",
+            "ALTER TABLE leads ADD COLUMN confidence_region INTEGER",
+        ]
+        for sql in migrations:
+            try:
+                conn.execute(sql)
+                conn.commit()
+            except sqlite3.OperationalError:
+                pass  # column already exists
 
 
 def _extract_social(item: dict, platform: str) -> str | None:
