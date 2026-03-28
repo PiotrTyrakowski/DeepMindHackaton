@@ -14,4 +14,18 @@ TARGETS = [
     ("electrician",  "Greenwood, MS"),
     ("pest control", "Lufkin, TX"),
     ("painter",      "Crowley, LA"),
+    # roofing contractors across all non-Gallup locations
+    ("roofing",      "Tooele, UT"),
+    ("roofing",      "Hobbs, NM"),
+    ("roofing",      "Clovis, NM"),
+    ("roofing",      "Stillwater, OK"),
+    ("roofing",      "Vernal, UT"),
+    ("roofing",      "Dodge City, KS"),
+    ("roofing",      "Alamogordo, NM"),
+    ("roofing",      "Douglas, AZ"),
+    ("roofing",      "Rawlins, WY"),
+    ("roofing",      "Altus, OK"),
+    ("roofing",      "Greenwood, MS"),
+    ("roofing",      "Lufkin, TX"),
+    ("roofing",      "Crowley, LA"),
 ]

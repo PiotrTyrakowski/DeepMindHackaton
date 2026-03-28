@@ -47,11 +47,11 @@ def main():
         save_run(run_id, query, location)
 
         items = list(client.dataset(dataset_id).iterate_items())
-        saved = sum(upsert_lead(i, query, location, run_id) for i in items)
+        no_website = [i for i in items if not i.get("website")]
+        saved = sum(upsert_lead(i, query, location, run_id) for i in no_website)
         finish_run(run_id, "SUCCEEDED", saved)
 
-        no_website = sum(1 for i in items if not i.get("website"))
-        print(f"  scraped={len(items)}  no_website={no_website}  saved={saved}  skipped(dup)={len(items)-saved}")
+        print(f"  scraped={len(items)}  no_website={len(no_website)}  saved={saved}  skipped(dup)={len(no_website)-saved}")
         total_saved += saved
         total_skipped += (len(items) - saved)
 
