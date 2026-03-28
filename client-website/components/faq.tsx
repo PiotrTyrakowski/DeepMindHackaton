@@ -19,21 +19,6 @@ const faqs = [
     answer:
       "We install a wide range of premium roofing materials including asphalt shingles, architectural shingles, clay and concrete tiles, metal roofing, slate, and flat roof systems. We help you choose the best option for your home's style and climate.",
   },
-  {
-    question: "Do you offer warranties on your work?",
-    answer:
-      "Yes, we provide comprehensive warranties on both materials and labor. Our workmanship warranty covers installation for 10 years, and material warranties vary by manufacturer, often ranging from 25 years to lifetime coverage.",
-  },
-  {
-    question: "Can you help with insurance claims?",
-    answer:
-      "Absolutely. We have extensive experience working with insurance companies on storm damage and other covered repairs. We document all damage thoroughly and work directly with your adjuster to ensure fair coverage.",
-  },
-  {
-    question: "How do I get started with a quote?",
-    answer:
-      "Simply contact us to schedule a free inspection and estimate. We'll assess your roof's condition, discuss your options, and provide a detailed written quote with no obligation. Most inspections can be scheduled within 48 hours.",
-  },
 ]
 
 export function FAQ({ firstQuestion }: { firstQuestion?: string }) {

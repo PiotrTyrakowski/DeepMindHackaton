@@ -5,23 +5,23 @@ A hackathon demo: a roofing contractor website that updates live during a simula
 ## Setup
 
 ```bash
-cd template
+cd client-website
 bun install
 bun dev
 ```
 
-Runs on `http://localhost:3000`.
+Runs on `http://localhost:3000` (or the port Next.js prints).
 
 ## Deploy to Vercel
 
 ```bash
-cd template
+cd client-website
 vercel
 ```
 
 ## Demo Commands
 
-Replace `localhost:3000` with your Vercel URL when deployed.
+Replace `localhost:3000` with your Vercel URL when deployed (for example `https://deep-mind-hackaton.vercel.app`).
 
 ### Step 1: Change colors & font
 

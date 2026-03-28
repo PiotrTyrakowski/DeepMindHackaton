@@ -1,0 +1,90 @@
+[
+  {
+    "type": "webhook",
+    "name": "change_website_theme",
+    "description": "Changes the website color scheme and font. Use this when the client asks to change colors, make it look more modern, cooler, warmer, or change the style/feel of the website. The 'earthy' theme is warm with cream/terracotta colors and serif font. The 'slate' theme is cool, modern with neutral grey colors and sans-serif font.",
+    "api_schema": {
+      "url": "https://deep-mind-hackaton.vercel.app/api/theme",
+      "method": "POST",
+      "request_headers": {
+        "Content-Type": "application/json"
+      },
+      "request_body_schema": {
+        "type": "object",
+        "properties": {
+          "themeVariant": {
+            "type": "string",
+            "description": "The theme to apply. Use 'slate' for a cool, modern look with grey tones and sans-serif font. Use 'earthy' for a warm look with cream/terracotta colors and serif font.",
+            "enum": ["slate", "earthy"]
+          }
+        },
+        "required": ["themeVariant"]
+      },
+      "content_type": "application/json"
+    }
+  },
+  {
+    "type": "webhook",
+    "name": "change_website_photo",
+    "description": "Changes the roof photo on the website. Use this when the client says the photo is wrong, doesn't look right, wants a different photo, or mentions the roof type in the image is incorrect.",
+    "api_schema": {
+      "url": "https://deep-mind-hackaton.vercel.app/api/photo",
+      "method": "POST",
+      "request_headers": {
+        "Content-Type": "application/json"
+      },
+      "request_body_schema": {
+        "type": "object",
+        "properties": {
+          "roofPhotoFixed": {
+            "type": "boolean",
+            "description": "Set to true to show the corrected roof photo, false to revert to original."
+          }
+        },
+        "required": ["roofPhotoFixed"]
+      },
+      "content_type": "application/json"
+    }
+  },
+  {
+    "type": "webhook",
+    "name": "change_faq_question",
+    "description": "Updates the first FAQ question on the website. Use this when the client wants to change, update, or replace the first question in the FAQ section.",
+    "api_schema": {
+      "url": "https://deep-mind-hackaton.vercel.app/api/faq",
+      "method": "POST",
+      "request_headers": {
+        "Content-Type": "application/json"
+      },
+      "request_body_schema": {
+        "type": "object",
+        "properties": {
+          "faqFirstQuestion": {
+            "type": "string",
+            "description": "The new text for the first FAQ question. Should be a clear question that a potential roofing customer would ask."
+          }
+        },
+        "required": ["faqFirstQuestion"]
+      },
+      "content_type": "application/json"
+    }
+  },
+  {
+    "type": "webhook",
+    "name": "reset_website",
+    "description": "Resets the website back to its original state. Use this if the client wants to start over or undo all changes.",
+    "api_schema": {
+      "url": "https://deep-mind-hackaton.vercel.app/api/reset",
+      "method": "POST",
+      "request_headers": {
+        "Content-Type": "application/json"
+      },
+      "request_body_schema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "content_type": "application/json"
+    }
+  }
+]
