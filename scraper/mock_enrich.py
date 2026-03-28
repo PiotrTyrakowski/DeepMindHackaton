@@ -169,8 +169,8 @@ CTA_MAP = {
     "landscaping": "seasonal estimate form",
 }
 
-STATUSES = ["NEW", "RESEARCHED", "WEBSITE_READY", "SMS_SENT", "CALLED", "INTERESTED", "NOT_INTERESTED", "CONVERTED"]
-STATUS_WEIGHTS = [20, 15, 10, 20, 15, 10, 5, 5]  # realistic pipeline distribution
+STATUSES = ["WAITING_FOR_CALL", "CALLED", "INTERESTED"]
+STATUS_WEIGHTS = [50, 30, 20]
 
 
 def rand_phone(state: str) -> str:
@@ -251,11 +251,8 @@ def enrich(conn: sqlite3.Connection):
         has_website = bool(r.get("website"))
         has_social  = any(r.get(p) for p in ["facebook", "instagram", "twitter", "linkedin"])
 
-        # mock email for ~40% of leads (realistic)
-        email = r.get("email")
-        if not email and random.random() < 0.40:
-            slug = r["name"].lower().replace(" ", "").replace("'", "")[:12]
-            email = f"info@{slug}.com"
+        # keep only real scraped emails, never mock them
+        email = None
 
         # mock facebook for ~55% without one (realistic)
         facebook = r.get("facebook")

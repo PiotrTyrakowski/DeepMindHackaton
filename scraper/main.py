@@ -36,7 +36,10 @@ app = FastAPI(title="Business Leads Scraper", version="2.0.0", lifespan=lifespan
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_origins=[
+        "http://localhost:5173", "http://127.0.0.1:5173",
+        "http://localhost:3000", "http://127.0.0.1:3000",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -214,10 +217,7 @@ class StatusUpdate(BaseModel):
     status: str
 
 
-VALID_STATUSES = {
-    "NEW", "RESEARCHED", "WEBSITE_READY", "SMS_SENT",
-    "CALLED", "INTERESTED", "NOT_INTERESTED", "CONVERTED",
-}
+VALID_STATUSES = {"WAITING_FOR_CALL", "CALLED", "INTERESTED"}
 
 
 @app.patch("/leads/{lead_id}/status")
