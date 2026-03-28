@@ -5,7 +5,7 @@ import { LiveDemoState, DEFAULT_STATE } from "./types";
 
 export function usePolling(intervalMs = 2000): LiveDemoState {
   const [state, setState] = useState<LiveDemoState>(DEFAULT_STATE);
-  const prevState = useRef<string>("");
+  const prevState = useRef<string>(JSON.stringify(DEFAULT_STATE));
 
   useEffect(() => {
     const poll = async () => {
