@@ -2,7 +2,7 @@ import {
   ChartBar,
   LayoutDashboard,
   type LucideIcon,
-  Search,
+  Phone,
   Target,
 } from "lucide-react";
 
@@ -58,9 +58,9 @@ export const sidebarItems: NavGroup[] = [
         icon: Target,
       },
       {
-        title: "Scrape",
-        url: "/dashboard/scrape",
-        icon: Search,
+        title: "Demo",
+        url: "/dashboard/demo",
+        icon: Phone,
         isNew: true,
       },
     ],
