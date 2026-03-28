@@ -124,11 +124,10 @@ async def trigger_call(req: CallRequest):
             detail="ELEVENLABS_AGENT_ID or ELEVENLABS_PHONE_NUMBER_ID env var not set",
         )
 
-    temp_number = "+48661878666"
     payload = {
         "agent_id": ELEVENLABS_AGENT_ID,
         "agent_phone_number_id": ELEVENLABS_PHONE_NUMBER_ID,
-        "to_number": temp_number,
+        "to_number": req.phone_number,
         "conversation_initiation_client_data": {
             "dynamic_variables": {
                 "business_name": req.business_name,
@@ -148,8 +147,7 @@ async def trigger_call(req: CallRequest):
     call_sid = data.get("callSid", "")
 
     _ended_calls[conversation_id] = False
-    temp_number = "+48661878666"
-    asyncio.create_task(_sms_if_call_alive(conversation_id, temp_number, req.business_name))
+    asyncio.create_task(_sms_if_call_alive(conversation_id, req.phone_number, req.business_name))
 
     return CallResponse(conversation_id=conversation_id, call_sid=call_sid)
 
