@@ -116,7 +116,7 @@ export function DemoForm() {
             <Label htmlFor="businessName">Business name</Label>
             <Input
               id="businessName"
-              placeholder="Smith's Plumbing"
+              placeholder="Jake Roofing"
               value={businessName}
               onChange={(e) => setBusinessName(e.target.value)}
               disabled={status === "calling"}
@@ -128,7 +128,7 @@ export function DemoForm() {
             <Label htmlFor="businessType">Business type</Label>
             <Input
               id="businessType"
-              placeholder="plumber"
+              placeholder="roofer"
               value={businessType}
               onChange={(e) => setBusinessType(e.target.value)}
               disabled={status === "calling"}
